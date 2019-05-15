@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  min-height: 100%;
 }
 
 
@@ -13,7 +14,7 @@ main {
   display: flex;
   flex-direction: row;
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 /* LEFT SIDE */
@@ -22,7 +23,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 50%;
-  background: linear-gradient(to top right, hsl(243, 86%, 85%), hsl(243, 87%, 12%));
+  background: linear-gradient(to top right, #7c77c5, #110a6d);
 }
 
 #main-img {
@@ -34,30 +35,31 @@ main {
 .right-container {
   width: 50%;
   padding: 0 5%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
 }
 
 /* RIGHT HEADER */
 
 .right-header {
-  margin: 10% 0;
+  /* margin: 10% 0; */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#logo {
-  width: 6rem;
-}
 .icons i {
-  padding: 0 0.8rem;
+  margin: 0 0.8rem;
   font-size: 1.3rem;
 }
 
 /* RIGHT CONTENT */
 
-.right-content {
-  padding: 20% 0 0;
-}
+/* .right-content {
+  margin: 20% 0 0;
+} */
+
 .right-content h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 2rem;
@@ -77,7 +79,6 @@ main {
 /* RIGHT FORM */
 
 .right-form {
-  margin: 5% 0;
   display: flex;
   justify-content: space-between;
 }
@@ -112,7 +113,7 @@ main {
 .right-privacy {
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 5%;
+  /* margin-bottom: 5%; */
 }
 
 /* MOBILE */
@@ -121,9 +122,74 @@ main {
   [class*="-container"] {
     width: 100%;
   }
+
+  /* MAIN */
   main {
     display: block;
     height: 100%;
+  }
+
+  /* LEFT CONTAINER */
+
+  .left-container {
+    height: 100vh;
+    /* background: url("images/bg-intro.svg") center/100% 100% no-repeat; */
+    background-image: url("images/bg-intro.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    max-height: 65vh;
+
+  }
+
+  /* #main-img {
+    width: 60%;
+  } */
+
+  /* RIGHT CONTAINER */
+
+  .right-container {
+    padding: 0 10%;
+  }
+  .right-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; /* This is mandatory for flexbox working */
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 5%;
+  }
+
+  #logo {
+    transform: scale(0.7);
+    filter: brightness(0) invert(1);
+  }
+
+  .icons i {
+    font-size: 1.2em;
+    color: #fff;
+  }
+
+  .right-form {
+    flex-wrap: wrap;
+  }
+
+  .signup {
+    width: 100%;
+    /* border: hsl(0, 0%, 95%) 1px solid; */
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0 , .1);
+
+  }
+
+  .submit {
+    width: 50%;
+    margin: 5% 0 0;
+  }
+
+  /* RIGHT PRIVACY */
+  .right-privacy {
+    padding: 10% 0 5%;
   }
 
 }
